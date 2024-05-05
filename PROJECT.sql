@@ -100,7 +100,7 @@ SELECT customerNumber, ROUND(SUM(ods.quantityOrdered*(ods.priceEach-ps.buyPrice)
  
  WITH 
  profit_table AS(
-SELECT customerNumber, ROUND(SUM(ods.quantityOrdered*(ods.priceEach-                  ps.buyPrice)),2) AS Profit
+SELECT customerNumber, ROUND(SUM(ods.quantityOrdered*(ods.priceEach-ps.buyPrice)),2) AS Profit
   FROM orders AS os
   JOIN orderdetails AS ods
     ON os.orderNumber=ods.orderNumber
@@ -114,14 +114,14 @@ SELECT contactLastName, contactFirstName, city, country, pt.Profit
   JOIN profit_table AS pt
     ON c.customerNumber=pt.customerNumber
  ORDER BY profit DESC
-  LIMIT 5;
+ LIMIT 5;
  
 /* SCREEN 6- TASK 6*/
 
 
 WITH 
 profit_table AS(
-SELECT customerNumber, ROUND(SUM(ods.quantityOrdered*(ods.priceEach-                  ps.buyPrice)),2) AS Profit
+SELECT customerNumber, ROUND(SUM(ods.quantityOrdered*(ods.priceEach-ps.buyPrice)),2) AS Profit
   FROM orders AS os
   JOIN orderdetails AS ods
     ON os.orderNumber=ods.orderNumber
@@ -135,7 +135,7 @@ SELECT contactLastName, contactFirstName, city, country, pt.Profit
   JOIN profit_table AS pt
     ON c.customerNumber=pt.customerNumber
  ORDER BY profit ASC
-  LIMIT 5;
+ LIMIT 5;
  
 
  /*SCREEN 7 - TASK 7*/
